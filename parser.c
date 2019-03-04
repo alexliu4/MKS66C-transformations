@@ -79,24 +79,19 @@ void parse_file ( char * filename,
     printf(":%s:\n",line);
 
     if(strcmp(line, "line" ) == 0){
-      printf("FOUND LINE\n");
       fgets(line, 255, f);
       line[strlen(line)-1]='\0';
 
       sscanf(line, "%lf %lf %lf %lf %lf %lf", &arr[0], &arr[1], &arr[2], &arr[3], &arr[4], &arr[5]);
       add_edge(edges, arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]);
-      printf("ADDED EDGE\n");
-
     }
 
     else if(strcmp(line, "ident" ) == 0){
-      printf("IDENT\n");
       ident(transform);
       print_matrix(transform);
     }
 
     else if(strcmp(line, "scale" ) == 0){
-      printf("SCALE\n");
       fgets(line, 255, f);
       line[strlen(line)-1]='\0';
 
@@ -143,7 +138,7 @@ void parse_file ( char * filename,
     else if(strcmp(line, "display" ) == 0){
       clear_screen(s);
       draw_lines(edges, s, c);
-      // display(s);
+      display(s);
     }
 
     else if(strcmp(line, "save" ) == 0){
