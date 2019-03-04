@@ -74,7 +74,6 @@ void draw_lines( struct matrix * points, screen s, color c) {
 
 
 void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
-  printf("LINE DRAWN\n");
 
   int x, y, d, A, B;
   //swap points if going right -> left
