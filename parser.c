@@ -88,7 +88,6 @@ void parse_file ( char * filename,
 
     else if(strcmp(line, "ident" ) == 0){
       ident(transform);
-      print_matrix(transform);
     }
 
     else if(strcmp(line, "scale" ) == 0){
@@ -98,7 +97,6 @@ void parse_file ( char * filename,
       sscanf(line, "%lf %lf %lf", &arr[0], &arr[1], &arr[2]);
       struct matrix * scale = make_scale(arr[0], arr[1], arr[2]);
       matrix_mult(scale, transform);
-      print_matrix(transform);
     }
 
     else if(strcmp(line, "move" ) == 0){
