@@ -129,7 +129,6 @@ void parse_file ( char * filename,
     }
 
     else if(strcmp(line, "apply" ) == 0){
-      printf("APPLY\n");
       matrix_mult(transform, edges);
     }
 
